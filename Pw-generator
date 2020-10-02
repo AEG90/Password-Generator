@@ -1,0 +1,22 @@
+import random
+import string
+
+print("Let's build a safe and strong password for you.\n")
+letter = string.ascii_letters
+number = string.digits + string.punctuation
+
+
+t_request = int(input('How many characters do you want this password to have? '))
+if t_request < 6:
+    int(input('For the safest results, your password should be 6 or more characters. Try again: '))
+
+
+n_request = int(input('Great! How many numbers would you like? '))
+l_request = int(input('O.K. and how many letters would you like? '))
+
+letters = random.sample(letter, l_request)
+numbers = random.sample(number, n_request)
+
+pw = numbers + letters
+new_pw = ''.join(pw)
+print(f'Your passsword will be {new_pw}.')
